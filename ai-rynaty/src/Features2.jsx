@@ -4,7 +4,7 @@ function Features2() {
     return (
         <div>
             <div className='feature-card2' id='features'>
-                <h1 className=' text-center2'> Endless Possibilities</h1>
+                <h1 className=' text-center2 '> Endless Possibilities</h1>
                 <p className='text-center2'>From creative writing to complex problem-solving, Rynaty adapts to your unique needs and workflow.</p>
                 <div className='container2 '>
                     <div className='row2'>

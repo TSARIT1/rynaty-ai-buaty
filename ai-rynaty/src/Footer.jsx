@@ -41,7 +41,6 @@ function Footer() {
 
                         </div>
 
-                        <hr className="border-light " />
                         <div className="text-center">
                             <p className="mb-0"> @Artificial intelligence Rynaty. All rights reserved.</p>
                         </div>

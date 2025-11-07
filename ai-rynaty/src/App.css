@@ -1,38 +1,61 @@
-/* <Header */
 
-.custom-navbar {
+
+/* ========== NAVBAR ========== */
+.navbarr {
   background: #0a0a12;
   position: fixed;
   width: 100%;
-  z-index: 999;
-  padding: 15px 0;
+  top: 0;
+  left: 0;
+  z-index: 9999;
   border-bottom: 1px solid #00ffff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
 }
 
 
-.neon-logo {
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 30px;
+  padding: 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ========== LOGO ========== */
+.navbar-logo {
   color: #00ffff;
   font-size: 1.8rem;
+  font-weight: bold;
   text-transform: uppercase;
+  text-decoration: none;
   text-shadow: 0 0 5px #00ffff, 0 0 20px #00e0e0;
   letter-spacing: 1px;
+  margin-right: 280px;
 }
 
+/* ========== LINKS ========== */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+}
 
-.neon-link {
+.nav-link {
   color: #b8ffff;
   font-weight: 500;
-  margin: 0 15px;
+  text-decoration: none;
   position: relative;
   transition: 0.3s;
 }
 
-.neon-link:hover {
+.nav-link:hover {
   color: #00ffff;
   text-shadow: 0 0 10px #00ffff, 0 0 20px #00e0e0;
 }
 
-
+/* ========== BUTTON ========== */
 .neon-button {
   background: transparent;
   border: 2px solid #00ffff;
@@ -50,14 +73,98 @@
   box-shadow: 0 0 15px #00ffff, 0 0 30px #00e0e0;
 }
 
+/* ========== HAMBURGER MENU ========== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
 
-@media (max-width: 992px) {
-  .navbar-nav {
-    text-align: center;
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #00ffff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Animation for toggle */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 900px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: #0a0a12;
+    border-top: 1px solid #00ffff;
+    overflow: hidden;
+    max-height: 0;
+  }
+
+  .nav-links.open {
+    max-height: 400px;
+    padding: 20px 0;
+  }
+
+  .nav-link {
+    margin: 10px 0;
   }
 
   .neon-button {
     margin-top: 10px;
+  }
+}
+/* ===== LOGO CONTAINER ===== */
+.logo-c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+/* ===== LOGO IMAGE ===== */
+.logo-ai {
+  width: 45px;                /* adjust based on your logo */
+  height: 45px;               /* keep it square */
+  border-radius: 50%;         /* circular logo */
+  object-fit: cover;
+  box-shadow: 0 0 15px #00ffff, 0 0 30px #00e0e0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect for glow animation */
+.logo-ai:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #00ffff, 0 0 50px #00e0e0;
+}
+
+/* ===== OPTIONAL: Adjust alignment with brand text ===== */
+.hd-container .logo-c {
+  margin-right: 12px;
+}
+
+@media (max-width: 900px) {
+  .logo-ai {
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -297,7 +404,7 @@
 
 .features-section::before {
   content: "";
-  position: absolute;
+  /* position: absolute; */
   top: -100px;
   left: -100px;
   width: 300px;
@@ -315,6 +422,8 @@
   margin-bottom: 15px;
   text-transform: uppercase;
   letter-spacing: 1px;
+    text-shadow: 0 0 5px #00ffff, 0 0 20px #00e0e0;
+
 }
 
 .features-subtitle {
@@ -405,7 +514,6 @@
   color: #21f0ff;
   font-size: 3rem;
   text-align: center;
-  -webkit-text-stroke: 1px #000000;
   text-shadow:
     0 0 5px #00ffff,
     0 0 10px #00cccc;
@@ -483,7 +591,6 @@
   color: #00ffff;
   font-size: 2rem;
   text-align: center;
-  -webkit-text-stroke: 1px #000000;
   text-shadow:
     0 0 5px #00ffff,
     0 0 10px #00cccc;
@@ -508,10 +615,10 @@
   color: #00ffff;
   font-size: 2.5rem;
   text-align: center;
-  -webkit-text-stroke: 1px #000000;
   text-shadow:
     0 0 5px #00ffff,
     0 0 10px #00cccc;
+    font-weight: 700;
 }
 
 .pricing-subtitle {
@@ -607,7 +714,6 @@
   margin-bottom: 30px;
   color: #00ffff;
   font-weight: 700;
-  -webkit-text-stroke: 0.5px #000000;
   text-shadow:
     0 0 5px #00ffff,
     0 0 10px #00cccc;
@@ -672,15 +778,19 @@
   font-size: 2.5rem;
   font-weight: 600;
   letter-spacing: 1px;
-  margin-bottom: 0px;
   color: #00ffff;
   text-transform: uppercase;
+    text-shadow: 0 0 5px #00ffff, 0 0 20px #00e0e0;
+
 }
 
 .text-center2 {
   text-align: center;
 }
+.text-center2:nth-child(2) {
+  padding-bottom: 30px;
 
+}
 
 .container2 {
   max-width: 1200px;
@@ -789,7 +899,6 @@
   color: #21f0ff;
   font-size: 3rem;
   text-align: center;
-  -webkit-text-stroke: 1px #000000;
   text-shadow:
     0 0 5px #00ffff,
     0 0 10px #00cccc;
@@ -826,7 +935,6 @@
   color: #fff;
   text-align: center;
   padding: 60px 10% 30px;
-  margin-top: -6%;
 }
 
 .Artificial {
@@ -907,10 +1015,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px 20px;
+  padding: 100px 20px;
   background: #000000;
   min-height: 100vh;
-  padding-top: 10%;
+  /* padding-top: 5%; */
 }
 
 .aboutpage-card {
@@ -1136,10 +1244,9 @@
 .pricepage-section {
   background: linear-gradient(135deg, #0a0a0a, #111827);
   color: #fff;
-  padding: 80px 20px;
+  padding: 160px 80px;
   font-family: 'Poppins', sans-serif;
   text-align: center;
-  padding-top: 15%;
 }
 
 
@@ -1148,6 +1255,7 @@
   font-weight: 700;
   color: #00d4ff;
   margin-bottom: 15px;
+  text-shadow: 0 0 5px #00ffff, 0 0 20px #00e0e0;
 }
 
 .pricepage-subtitle {
@@ -1309,6 +1417,7 @@
 @media (max-width: 768px) {
   .pricepage-title {
     font-size: 2.4rem;
+    text-shadow: 0 0 5px #00ffff, 0 0 20px #00e0e0;
   }
 
   .pricepage-subtitle {
@@ -1342,11 +1451,10 @@
 .login-section {
   background: radial-gradient(circle at top, #0b132b, #000);
   color: white;
-  padding: 80px 20px;
+  padding: 140px 20px;
   text-align: center;
   font-family: 'Poppins', sans-serif;
-  margin-right: -20%;
-  padding-top: 15%;
+  padding-top: 9%;
 }
 
 .login-header {
@@ -1503,11 +1611,11 @@
 .register-section {
   background: radial-gradient(circle at top, #0b132b, #000);
   color: white;
-  padding: 80px 20px;
+  padding: 150px 20px;
   text-align: center;
   font-family: 'Poppins', sans-serif;
-  margin-right: -20%;
-  padding-top: 15%;
+
+  padding-top: 9%;
 }
 
 .register-header {
@@ -1659,10 +1767,10 @@
 .contact-section {
   background: radial-gradient(circle at top, #0b132b, #000);
   color: white;
-  padding: 80px 20px;
+  padding: 180px 120px;
   text-align: center;
   font-family: 'Poppins', sans-serif;
-  padding-top: 15%;
+  padding-top: 9%;
 }
 
 .contact-header {
@@ -1794,7 +1902,6 @@
   color: #f0f0f0;
   font-family: 'Poppins', sans-serif;
   padding-top: 8%;
-  margin-right: -5%;
 }
 
 

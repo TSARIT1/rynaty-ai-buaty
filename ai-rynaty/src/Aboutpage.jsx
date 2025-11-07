@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import oliver from "../src/assets/oliver.jpeg"
-
+import pdf from './assets/ai-pitchdeck.pdf'
 function Aboutpage() {
+  const [showPdf, setShowPdf] = useState(false)
   return (
-    <div>
+    <>
       <div className="aboutpage-container">
         <div className="aboutpage-card">
 
@@ -21,7 +22,7 @@ function Aboutpage() {
               <div className="aboutpage-badge purple">💡 Visionary Innovator</div>
             </div>
 
-            <button className="aboutpage-button">View Pitch Deck</button>
+            <button className="aboutpage-button" onClick={() => setShowPdf(true)}>View Pitch Deck</button>
           </div>
 
           {/* Right Section */}
@@ -68,7 +69,7 @@ function Aboutpage() {
             <h2 className="company-title">About <span>Rynaty AI</span></h2>
 
             <p className="company-description">
-              Founded in 2023, <strong>Rynaty AI</strong> is a next-generation technology company based in Africa,
+             <strong>Rynaty AI</strong> is a next-generation technology company based in Africa,
               focused on building AI-powered solutions for smart cities, clean energy, and sustainable infrastructure.
               Our mission is to make artificial intelligence accessible and impactful across all sectors of society.
             </p>
@@ -104,7 +105,16 @@ function Aboutpage() {
         </div>
       </div>
 
-    </div>
+      {showPdf && (
+        <div className="pdf-modal-overlay" style={{position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 2000}}>
+          <div className="pdf-modal" style={{width: '90%', height: '90%', background: '#fff', borderRadius: 8, overflow: 'hidden', position: 'relative'}}>
+            <button onClick={() => setShowPdf(false)} style={{position: 'absolute', top: 8, right: 8, zIndex: 2001, padding: '6px 10px'}}>Close</button>
+            <iframe src={pdf} title="Oliver Pitch Deck" style={{width: '100%', height: '100%', border: 'none'}} />
+          </div>
+        </div>
+      )}
+
+    </>
   )
 }
 

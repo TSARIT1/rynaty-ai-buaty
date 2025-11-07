@@ -1,6 +1,14 @@
 import React from 'react'
 
 function Price() {
+
+  const INR_TO_USD = 0.012
+  const toUSD = (inr) => (inr * INR_TO_USD).toFixed(2)
+
+  const starterPriceInr = 0
+  const proPriceInr = 399
+  const enterprisePriceInr = 1999
+
   return (
     <div>
       <div className="pricing-section" id="price">
@@ -27,7 +35,7 @@ function Price() {
           {/* <price2 */}
           <div className="pricing-card featured">
             <h3 className="plan-title">Pro</h3>
-            <p className="plan-price">₹399<span>/month</span></p>
+            <p className="plan-price">${toUSD(proPriceInr)} <span>/month</span></p>
             <ul className="plan-features">
               <li>✔ Extended access to our flagship model GPT‑5</li>
               <li>✔ Extended access to image generation</li>
@@ -40,7 +48,7 @@ function Price() {
           {/* <price3 */}
           <div className="pricing-card">
             <h3 className="plan-title">Enterprise</h3>
-            <p className="plan-price">₹1,999<span>/month</span></p>
+            <p className="plan-price">${toUSD(enterprisePriceInr)} <span>/month</span> </p>
             <ul className="plan-features">
               <li>✔ Advanced reasoning with GPT-5</li>
               <li>✔ Expanded messaging and uploads</li>

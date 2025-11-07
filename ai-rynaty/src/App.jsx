@@ -12,6 +12,7 @@ import Login from './Login'
 import Register from './Register'
 import Contactpage from './Contactpage'
 import Getstart from './Getstart'
+import Chat from './components/Chat/index'
 function App() {
 
 
@@ -20,13 +21,15 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+
+        <Route path='/getstart' element={<Chat />} />
+
         <Route path='/aboutpage' element={<Aboutpage />} />
         <Route path="/featurepage" element={<Featurepage />} />
         <Route path="/pricepage" element={<Pricepage />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/contact' element={<Contactpage />} />
-        <Route path='/getstart' element={<Getstart />} />
       </Routes>
       <Footer />
 

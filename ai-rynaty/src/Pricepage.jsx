@@ -41,7 +41,7 @@ function Pricepage() {
               <div className="col-md-4">
                 <div className="pricepage-card featured">
                   <h3 className="pricepage-plan-title">Pro</h3>
-                  <p className="pricepage-plan-price">₹399<span>/month</span></p>
+                  <p className="pricepage-plan-price">A$49<span>/month</span></p>
                   <ul className="pricepage-features">
                     <li>✔ Extended access to our flagship model GPT‑5</li>
                     <li>✔ Extended access to image generation</li>
@@ -56,7 +56,7 @@ function Pricepage() {
               <div className="col-md-4">
                 <div className="pricepage-card">
                   <h3 className="pricepage-plan-title">Enterprise</h3>
-                  <p className="pricepage-plan-price">₹1,999<span>/month</span></p>
+                  <p className="pricepage-plan-price">A$199<span>/month</span></p>
                   <ul className="pricepage-features">
                     <li>✔ Advanced reasoning with GPT-5</li>
                     <li>✔ Expanded messaging and uploads</li>
